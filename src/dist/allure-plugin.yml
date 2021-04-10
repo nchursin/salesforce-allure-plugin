@@ -1,0 +1,10 @@
+id: sf-allure
+name: Salesforce Allure
+description: Plugin to convert Salesforce Apex test results to Allure reports
+extensions:
+#  - my.company.allure.CustomPlugin // - Fully qualified names of classes that implement `Extension` interface and comprise data processing functionality.
+#  - my.company.allure.CustomWidget
+jsFiles:
+#  - index.js
+cssFiles:
+#  - styles.css
