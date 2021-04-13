@@ -17,13 +17,8 @@ import java.nio.file.Path;
 import java.util.Properties;
 
 public class SfTestResultReader implements Reader {
-    private final String FILENAME_PATTERN = "test-results.json";
-    private final Properties props = new Properties();
+    private String fileName = "test-results.json";
 
-    private String fileName;
-
-    public SfTestResultReader() {
-    }
 
     @Override
     public void readResults(Configuration configuration, ResultsVisitor visitor, Path directory) {

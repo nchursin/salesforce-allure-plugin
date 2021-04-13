@@ -9,6 +9,9 @@ import io.qameta.allure.entity.Time;
 import lombok.Data;
 import lombok.ToString;
 
+import static io.qameta.allure.entity.LabelName.SUITE;
+import static io.qameta.allure.entity.LabelName.TEST_CLASS;
+
 @Data
 @ToString
 @JsonPOJOBuilder(withPrefix = "")
@@ -38,7 +41,8 @@ public class SfApexTestResult {
     public TestResult getAllureTestResult() {
         final TestResult result = new TestResult();
         result.setUid(this.id);
-        result.setName(this.fullName);
+        result.setName(this.methodName);
+        result.setFullName(this.fullName);
         result.setStatus(this.getAllureStatus());
         result.setStatusMessage(this.message);
         result.setStatusTrace(this.stackTrace);
@@ -46,6 +50,8 @@ public class SfApexTestResult {
             result.setTime(new Time());
             result.getTime().setDuration(Long.valueOf(this.runTime));
         }
+        result.addLabelIfNotExists(SUITE, this.apexClass.getName());
+        result.addLabelIfNotExists(TEST_CLASS, this.apexClass.getName());
         return result;
     }
 
