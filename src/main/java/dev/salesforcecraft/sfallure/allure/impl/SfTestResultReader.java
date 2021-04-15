@@ -6,15 +6,11 @@ import io.qameta.allure.Reader;
 import io.qameta.allure.context.JacksonContext;
 import io.qameta.allure.core.Configuration;
 import io.qameta.allure.core.ResultsVisitor;
-import io.qameta.allure.entity.Status;
-import io.qameta.allure.entity.TestResult;
-import io.qameta.allure.entity.Time;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Properties;
 
 public class SfTestResultReader implements Reader {
     private String fileName = "test-results.json";
