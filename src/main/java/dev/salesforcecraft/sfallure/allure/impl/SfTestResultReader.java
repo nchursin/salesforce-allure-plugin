@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class SfTestResultReader implements Reader {
-    private String fileName = "test-results.json";
+    private String fileName = "sf-test-results.json";
 
 
     @Override
